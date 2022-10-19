@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var 갯수 = parseInt(prompt('복숭아가 몇개 있나요?'));
+        
+        var 바구니사이즈 = 10;
+        var 나머지 = 갯수 % 바구니사이즈;
+        var 바구니몇개 = parseInt(갯수/바구니사이즈);
+
+        if(나머지!==0) {
+            바구니몇개++;
+        }
+        else {
+            나머지 = 10;
+        }
+        
+        alert(`필요한 바구니는 ${바구니몇개}개, 마지막 바구니에는 ${나머지}개가 들어간다.`);
+
+    </script>
+</body>
+</html>
