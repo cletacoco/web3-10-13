@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="gugu-button">구구단 출력</button>
+    <div id="gugu-place">여기에 구구단이 출력됩니다.</div>
+    
+    <script>
+        
+        // 구구단 출력 버튼 누르면 몇단 출력할건지 입력받고 해당되는 단 출력
+        //  guguPlace.innerHTML =
+        //  guguPlace.innerHTML += 둘다 써야함
+
+        document.getElementById("gugu-button").addEventListener('click', gugudan);
+        document.getElementById("gugu-place")
+        
+
+        function gugudan() { 
+            const 구구단 = parseInt(prompt('몇단을 출력할까요?'))
+            for (let i=1; i<10; i++){
+                    document.getElementById('gugu-place').innerHTML += (`<h2>${구구단}단</h2>`)
+                for(let j=1; j<10; j++) {
+                    document.getElementById('gugu-place').innerHTML += (`${구구단}x${j}=${구구단*j}<br>`)
+                }
+            }
+        }
+
+
+        
+
+    </script>
+</body>
+</html>
