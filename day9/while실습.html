@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+    
+        1부터 100까지의 숫자 중 하나를 입력합니다.
+        컴퓨터가 1부터 100까지 숫자를 랜덤하게 선택해서 
+        몇번만에 맞췄는지 그 결과를 출력해주세요.
+
+        중복값을 제외하는것은 고려하지 않습니다.
+        이미 선언한 숫자도 다시 나올수 있습니다.
+        
+        */
+
+        const 숫자입력 = Number(prompt(`1부터 100까지 중에 하나를 입력해주세요.`));
+        console.log(`제시된 숫자:${숫자입력}`)
+        let i = 0;
+
+        while(true){
+            
+            const 숫자받기 = Math.floor(Math.random()*100+1);
+            console.log(`결과 : ${숫자받기}`)
+            i++;
+            
+            if(숫자입력===숫자받기){
+                console.log(`종료 되었습니다.`)
+                console.log(`${i}회 실행되었습니다.`)
+                break;
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

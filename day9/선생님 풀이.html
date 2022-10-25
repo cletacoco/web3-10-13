@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>1~100 숫자 랜덤 게임</h1>
+    <button id ="game">랜덤 게임 시작</button>
+
+    <script>
+
+        const upDownGameButton = document.getElementById("game");
+        upDownGameButton.addEventListener('click', upDownGameStart);
+        
+
+        function upDownGameStart() {
+            
+            const answer = Math.floor(Math.random()*100+1);
+            
+            for(let i = 0; i < 5; i++){
+
+            const input = Number(prompt(`1부터 100까지 숫자중 하나를 입력해주세요.\n남은 기회는 ${5-i}번 입니다.`))
+            
+            //실제 예외처리는 try catch 문을 사용합니다.
+            //단순 설명을 위해 if문으로 구현했습니다.
+            //이런식으로 예외처리가 가능하는 점만 기억하고 있으면 됩니다. 
+
+            if(Number.isNaN(input)){
+                alert('잘못된 값을 입력하셨습니다.\n숫자만 입력 가능합니다.')
+                i--;
+                continue;
+            }
+
+            if(!Number.isInteger(input)){
+                alert('실수를 입력하셨습니다.\n정수만 입력 가능합니다.')
+                i--;
+                continue;
+            }
+        
+            if(answer < input){
+                alert(`정답은 ${input}보다 작습니다.`)
+            }else if (answer > input) {
+                alert(`정답은 ${input}보다 큽니다.`)
+            }else {
+                alert(`정답 입니다!`)
+                break;
+            }
+
+            if (i===4) {
+                alert(`정답은 ${answer} 이였습니다. `)
+            }
+          }
+        }
+
+    </script>
+</body>
+</html>
