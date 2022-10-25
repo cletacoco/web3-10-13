@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 이건 클래스에 대한 부연 설명
+        // 애초에 퍼블리셔 영역을 벗어난 주제 
+        
+
+        class Bag {
+            constructor(height,width,depth,name){
+                this.width = width;
+                this.height = height;
+                this.depth = depth;
+                this.volume = width*height*depth;
+                this.name = name;
+            }
+
+            내용물 = new Array();
+
+            /* 부피출력(){
+                alert(`이 가방의 부피는 ${this.volume}입니다.`)
+            }
+            */
+
+            이름확인(){
+                alert(`가방의 이름표에는 ${this.name}라고 써있다.`)
+            }
+            수납하기(물건) {
+                this.내용물.push(물건);
+
+            }
+            가방확인() {
+                alert(`이 가방에 들어있는 물건은 \n ${내용물}`)
+            }
+        }
+
+
+        const 철수가방 = new Bag(10,20,30,`철수`)
+    </script>
+</body>
+</html>
