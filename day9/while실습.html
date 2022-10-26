@@ -20,10 +20,10 @@
         
         */
 
-        const 숫자입력 = Number(prompt(`1부터 100까지 중에 하나를 입력해주세요.`));
+        const 숫자입력 = Number(prompt(`1부터 100까지 숫자 중에 하나를 입력해주세요.`));
         console.log(`제시된 숫자:${숫자입력}`)
         let i = 0;
-
+        
         while(true){
             
             const 숫자받기 = Math.floor(Math.random()*100+1);
@@ -31,8 +31,7 @@
             i++;
             
             if(숫자입력===숫자받기){
-                console.log(`종료 되었습니다.`)
-                console.log(`${i}회 실행되었습니다.`)
+                console.log(`종료 되었습니다.\n${i}회 실행되었습니다.`)
                 break;
             }
 
