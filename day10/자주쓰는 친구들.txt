@@ -1,0 +1,31 @@
+쓸만한 프로퍼티
+
+document            웹문서 내에 접근할 수 있다
+frameElement        현재 이 문서가 다른 요소 안에 포함되있는가?
+innerHeight         내부의 높이값
+innerWidth          내부의 너비값
+localStorage        브라우저의 데이터를 저장하는 로컬 스토리지 반환
+name                브라우저 창의 이름을 가져오거나 수정
+parent              부모요소에 접근
+screenX             모니터 왼쪽과 브라우저 왼쪽 사이의 거리
+screenY             모니터 윗쪽과 브라우저 윗쪽 사이의 거리
+scrollX             스크롤 했을때 수평으로 이동하는 픽셀 수
+scrollY             스크롤 했을때 수직으로 이동하는 픽셀 수
+
+쓸만한 메서드
+
+alert()             알림창 표시
+blur()              포커스 제거
+close()             현재창 닫기
+confirm()           확인과 취소 있는 확인창
+focus()             현재창에 포커스 부여
+moveBy()            현재창을 지정한 크기만큼 이동
+moveTo()            현재창을 지정한 좌표로 이동
+open()              새로운 창 열기
+prompt()            입력한 텍스트 반환하는 창
+resizeBy()          지정한 크기로 현재창 크기 조절
+rasizeTo()          창 크기 조절을 동적으로
+scroll()            특정 위치로 스크롤
+scrollBy()          지정한 크기만큼씩 스크롤
+scrollTo()          지정한 위치까지 스크롤
+sizeToContent()     내용에 맞게 창 크기 맞춤
