@@ -86,7 +86,7 @@
             if(index < 4){
                 positionValue -= Img_width;
                 slidelist.style.transform = `translateX(${positionValue}px)`;
-                index += 1;
+                index ++;
 
             }
         }
@@ -95,7 +95,7 @@
             if(index > 0){
                 positionValue += Img_width;
                 slidelist.style.transform = `translateX(${positionValue}px)`;
-                index -= 1;
+                index--;
             }
         }
 
