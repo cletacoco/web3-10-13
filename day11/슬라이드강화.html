@@ -20,7 +20,6 @@
 
         .slide-wrapper {
             display: flex;
-            transition: transform 0.3s;
         }
 
         .slide {
@@ -60,12 +59,27 @@
 
         buttonWrapper.children[0].addEventListener('click', ()=>{
             index--;
+            if(index < 0){
+                index = 0;
+            }
             slideWrapper.style.transform = `translateX(-${slideWidth * index}px)`
+        
+
+
         })
+        
         buttonWrapper.children[1].addEventListener('click',()=>{
             index++
+            if(index > 4){
+                index = 4;
+            }
             slideWrapper.style.transform = `translateX(-${slideWidth * index}px)`
         })
+        
+
+
+
+        
 
 
 
