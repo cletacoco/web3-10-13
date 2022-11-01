@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: #00000050;
+    
+        }
+
+        .modal-show {
+            display: flex;
+        }
+
+        .modal-window {
+            width: 400px;
+            height: 300px;
+            background-color: white;
+
+            padding: 32px;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        .closeX {
+            display: inline;
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-window">
+            <div class="closeX">X</div>
+            <h2>모달창</h2>
+            <p>내용내용내용</p>
+        </div>
+    </div>
+    <button onclick="openModal()">모달창 열기</button>
+
+    <script>
+
+
+        function openModal() {
+            const modal = document.querySelector('.modal');
+            modal.classList.add('modal-show');
+        }
+
+        //모달 끄는 이벤트 만들기
+        function closeModal() {
+            const modal = document.querySelector('.modal');
+            modal.classList.remove('modal-show'); 
+        }
+
+        //특정위치 클릭했을때 꺼지는 모달 만들기
+        window.addEventListener('click', (hi) => {
+            if(hi.target.classList.contains('modal')){
+                closeModal();
+            }
+        })
+
+        //ESC로 모달 끄는법
+        window.addEventListener('keydown' , (e) => {
+            if (e.key === 'Escape') {
+                closeModal()
+            }
+        })
+
+        window.addEventListener('click' , (X) => {
+            if (X.target.classList.contains('closeX')){
+                closeModal();
+            }
+        })
+
+        //X키로 모달 끄는법
+        
+
+    </script>
+</body>
+</html>

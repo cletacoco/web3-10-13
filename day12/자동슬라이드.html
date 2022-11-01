@@ -59,10 +59,9 @@
         // html요소를 복사하고 붙여넣고, transition값 조절이 필요하다.
 
 
-
         const slideWrapper = document.querySelector('.slide-wrapper');
         const buttonWrapper = document.querySelector('.button-wrapper');
-        const slideWidth = 300;
+        const slideWidth = 300; // 여기까지가 슬라이드 갯수 확인 가능
 
         const copyFirst = slideWrapper.firstElementChild.cloneNode(true);
         const copyLast = slideWrapper.lastElementChild.cloneNode(true);
@@ -70,19 +69,29 @@
         slideWrapper.appendChild(copyFirst);
         slideWrapper.insertBefore(copyLast,slideWrapper.firstElementChild);
 
-        let moveCheck = true;
-        let index = 1;
+       
+        let moveCheck = true;  //위치 체크
+        let index = 1; //보여지는 첫번째 슬라이드
+        let nextinterval; // 인터벌 넣어줄 변수 선언
         moveSlide(0);
+        
         // 이전버튼
         buttonWrapper.children[0].addEventListener('click', slideToLeft)
         // 다음버튼
         buttonWrapper.children[1].addEventListener('click', sliderToRight)
-
+        
         function moveSlide(time){
             slideWrapper.style.transform = `translateX(-${slideWidth * index}px)`;
             slideWrapper.style.transition = `${time}s`;
-        }
 
+            //인터벌 삭제, (타이머 초기화)
+            clearInterval(nextinterval);
+            
+            //5초마다 반복하는 인터벌 재설정
+            nextinterval = setInterval(() => {
+                sliderToRight();
+            },5000);
+        }
 
 
         function slideToLeft() {
