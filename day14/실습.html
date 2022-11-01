@@ -29,6 +29,7 @@
         input.value 안에 값이 저장됩니다.
         */
 
+
        //버튼 이벤트
        function buttonClick () {
            
@@ -38,14 +39,23 @@
             const makeP = document.createElement('p');
             //  input 데이터 받아오기
             const name = document.getElementById('name').value;
-            
-            // console.log(name);
-            makeP.value = name;
-            place.append(name);
+
+            //p 태그에 input 데이터 넣기
+            makeP.append(name);
+
+            //place에 p태그 넣기
+            place.append(makeP);
+
+            /* append : 컨텐츠를 선택된 요소 내부의 끝 부분에서 삽입
+            노드 객체(node object)나 (DOMString(text)를 사용할 수 있음)
+
+            appendChild : Node 객체만 받을 수 있음.
+            한번에 오직 하나의 노드만 추가 할 수 있다.
+            */
+
+
 
         }
-
-
     </script>
 </body>
 </html>
