@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #aaa;
+            height: 5000px;
+            position: relative;
+        }
+
+        header {
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            transition: 0.5s;
+            position: fixed;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        #hamberger {
+            font-size: 60px;
+        }
+        
+        .scrollde {
+            color: rgb(87, 151, 219);
+            background-color: #ffffff50;
+        }
+
+        .scroll-down {
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+<body>
+    <header class="scrolled">
+        <h1>대충로고</h1>
+        <div id="hamberger">=</div>
+    </header>
+    <script>
+        const header = document.querySelector('header');
+        const headerHeight = header.getBoundingClientRect().height;
+        //header의 세로값 가져오기
+        
+        let preY = window.screenY;
+
+
+
+        //마우스 휠? 
+        //마우스 휠은 단순히 마우스 위 휠이 움직이는 이벤트를 감지한다.
+        //모바일환경 or 스크롤을 마우스로 클릭해서 드래그 할때 작동 X
+
+   
+            window.addEventListener('mousewheel', (e)=>{
+            if (e.wheelDelta > 0 ) {
+                header.classList.remove('scroll-down')
+                //위로 올린다
+            }else {
+                header.classList.add('scroll-down')
+                //아래로 내린다
+            }
+        })
+
+
+        window.addEventListener('scroll',(e)=>{
+            if (window.scrollY === 0) {
+                //기본값
+                header.classList.remove('scrolled');
+            }else {
+                //파란글씨,흰배경
+                header.classList.add('scrollde');
+            }
+            
+        }) // 선생님이 한것
+
+        window.addEventListener('scroll',(e)=>{
+            if(window.scrollY > headerHeight){
+                header.classList.add('scrollde');
+            }else{
+                header.classList.remove('scrollde');
+            }
+        }) // 내가한것
+
+
+        //위로 스크롤 했으면 true, 아래로 스크롤 됐으면 false
+        const scrollDelta = preY-window.screenY > 0;
+        if(scrollDelta){
+            header.classList.remove('scroll-down');
+        }else{
+            header.classList.add('scroll-down');
+        }
+
+        /*
+        if(preY-window.screenY > 0){
+            scrollDelta = true;
+        }else {
+            scrollDelta = flase
+        }
+        */
+
+        preY = window.screenY;
+
+    </script>
+</body>
+</html>
